@@ -30,3 +30,9 @@ The notebook never reads credentials or private identifiers from its URL.
 It includes a second cell that reuses the bootstrap connection to send Colab
 lineage, metrics, and runtime logs back to NeuralSpace with the compact helper
 flow: `start_run -> use -> log_metrics -> produce -> finish_run`.
+`BASE_MODEL_ID` is explicit: leave it blank to skip base-model lineage, enter a
+model id/name to use that model, or set it to `AUTO` to pick the first attached
+workspace model.
+If `OUTPUT_MODEL_ID` is left blank, the notebook creates a temporary
+`colab-output-<run>` model asset id so the demo graph still shows
+`dataset/model inputs -> run -> output model`.
